@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>calculator</title>
+</head>
+<body align="center">
+    <h1>CALCULATOR</h1>
+    <div class="calculator">
+        <div class="value">
+            <form name="f">
+                <br>    
+                <input type="text" name="ddd" id="result"><br><br>
+                <input type="button" value="1" class="btn" onclick="f.ddd.value+=1">
+                <input type="button" value="2" class="btn" onclick="f.ddd.value+=2">
+                <input type="button" value="3" class="btn" onclick="f.ddd.value+=3">
+                <input type="button" value="+" class="btn" onclick="add()">
+                <br>
+                <input type="button" value="4" class="btn" onclick="f.ddd.value+=4">
+                <input type="button" value="5" class="btn" onclick="f.ddd.value+=5">
+                <input type="button" value="6" class="btn" onclick="f.ddd.value+=6">
+                <input type="button" value="-" class="btn" onclick="sub()">
+                <br>
+                <input type="button" value="7" class="btn" onclick="f.ddd.value+=7">
+                <input type="button" value="8" class="btn" onclick="f.ddd.value+=8">
+                <input type="button" value="9"  class="btn" onclick="f.ddd.value+=9">
+                <input type="button" value="/"class="btn"  onclick="div()">
+                <br>
+                <input type="button" value="c" class="btn" onclick="f.ddd.value=''">
+                <input type="button" value="0" class="btn" onclick="f.ddd.value+=0">
+                <input type="button" value="=" class="btn" onclick="f.ddd.value=eval(f.ddd.value)">
+                <input type="button" value="x" class="btn" onclick="mul()">
+            </form>
+        </div>
+    </div>
+    <script>
+        function add()
+        {
+            var a=0,b=0;
+            a=f.ddd.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-'||b=='*'||b=='/')
+            {
+                f.ddd.value=a.substring(0,a.length-1);
+                f.ddd.value+='+'
+            }
+            else
+            {
+                f.ddd.value+='+';
+            }
+        }
+        function sub()
+        {
+            var a=0,b=0;
+            a=f.ddd.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-'||b=='*'||b=='/')
+            {
+                f.ddd.value=a.substring(0,a.length-1);
+                f.ddd.value+='-'
+            }
+            else
+            {
+                f.ddd.value+='-';
+            }
+        }
+        function mul()
+        {
+            var a=0,b=0;
+            a=f.ddd.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-'||b=='*'||b=='/')
+            {
+                f.ddd.value=a.substring(0,a.length-1);
+                f.ddd.value+='*'
+            }
+            else
+            {
+                f.ddd.value+='*';
+            }
+        }
+        function div()
+        {
+            var a=0,b=0;
+            a=f.ddd.value;
+            b=a.charAt(a.length-1);
+            if(b=='+' || b=='-'||b=='*'||b=='/')
+            {
+                f.ddd.value=a.substring(0,a.length-1);
+                f.ddd.value+='/'
+            }
+            else
+            {
+                f.ddd.value+='/';
+            }
+        }
+    </script>
+</body>
+</html>
